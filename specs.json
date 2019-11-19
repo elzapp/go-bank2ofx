@@ -1,0 +1,65 @@
+{
+    "format": [{
+        "name": "spv-kreditt",
+        "curdef": "NOK",
+        "comma":";",
+        "charset":"UTF-8",
+        "skip-header": 1,
+        "skip-footer": 0,
+        "fields": {
+            "trntype":{},
+            "dtposted":{"field":0,"dateformat":"02.01.2006"},
+            "dtuser":{"field":1,"dateformat":"02.01.2006"},
+            "trnamt":{
+                "sum":[
+                    {"field":5,"multiplier":1},
+                    {"field":6,"multiplier":1}
+                ]},
+            "ftid":{"field":8},
+            "name":{},
+            "memo":{"field":3},
+            "bankaccto.bankid":{},
+            "bankaccto.acctid":{"field":9},
+            "bankaccto.accttype":{}
+        }
+    },{
+        "name": "fanasparebank-siste",
+        "comma":"\t",
+        "charset":"ISO-8859-15",
+        "curdef": "NOK",
+        "skip-header": 1,
+        "skip-footer": 0,
+        "fields": {
+            "trntype":{},
+            "dtposted":{"field":0,"dateformat":"02.01.2006"},
+            "dtuser":{"field":0,"dateformat":"02.01.2006"},
+            "trnamt":{"field":4},
+            "ftid":{},
+            "name":{},
+            "memo":{"field":3},
+            "bankaccto.bankid":{},
+            "bankaccto.acctid":{},
+            "bankaccto.accttype":{}
+        }
+    },{
+        "name": "fanasparebank-arkiv",
+        "comma":"\t",
+        "charset":"ISO-8859-15",
+        "curdef": "NOK",
+        "skip-header": 1,
+        "skip-footer": 0,
+        "fields": {
+            "trntype":{},
+            "dtposted":{"field":0,"dateformat":"02.01.2006"},
+            "dtuser":{"field":1,"dateformat":"02.01.2006"},
+            "trnamt":{"field":4, "multiplier":1},
+            "ftid":{"field":5},
+            "name":{},
+            "memo":{"field":3},
+            "bankaccto.bankid":{},
+            "bankaccto.acctid":{"field":6},
+            "bankaccto.accttype":{}
+        }
+    }
+]
+}
