@@ -28,13 +28,21 @@ jobs:
       run: go build -v .
     - name: Build for Windows
       run: GOOS=windows GOARCH=amd64 go build -v .
+    - name: Prepare artifacts
+      run: |
+        mkdir -p "linux"
+        cp go-bank2ofx linux/bank2ofx
+        cp specs.json linux/
+        mkdir -p "windows"
+        cp go-bank2ofx.exe windows/bank2ofx.exe
+        cp specs.json windows/
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
       with:
-        name: go-bank2ofx (linux amd64)
-        path: go-bank2ofx
+        name: bank2ofx (linux amd64)
+        path: linux/
     - name: Upload artifact windows
       uses: actions/upload-artifact@v1.0.0
       with:
-        name: go-bank2ofx.exe (windows amd64)
-        path: go-bank2ofx.exe
+        name: bank2ofx (windows amd64)
+        path: windows/
