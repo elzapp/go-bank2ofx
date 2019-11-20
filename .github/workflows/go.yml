@@ -24,5 +24,17 @@ jobs:
             dep ensure
         fi
 
-    - name: Build
+    - name: Build for linux
       run: go build -v .
+    - name: Build for Windows
+      run: GOOS=windows GOARCH=amd64 go build -v .
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: go-bank2ofx (linux amd64)
+        path: go-bank2ofx
+    - name: Upload artifact windows
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: go-bank2ofx.exe (windows amd64)
+        path: go-bank2ofx.exe
